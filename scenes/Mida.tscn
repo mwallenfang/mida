@@ -1,24 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://do8rbirv287jk"]
+[gd_scene load_steps=3 format=3 uid="uid://bj7hv4565r7l0"]
 
-[ext_resource type="PackedScene" uid="uid://cwh220lneq3gx" path="res://scenes/Test.tscn" id="1_px6px"]
+[ext_resource type="Script" path="res://scenes/Mida.gd" id="1_eetb2"]
 [ext_resource type="Script" path="res://scenes/Camera2D.gd" id="2_chv1w"]
 
 [node name="Mida" type="Control"]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -256.0
-offset_top = -160.0
-offset_right = 256.0
-offset_bottom = 160.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+script = ExtResource("1_eetb2")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="GameContainer" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,17 +21,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TestLevel" parent="PanelContainer" instance=ExtResource("1_px6px")]
-
-[node name="Camera2D" type="Camera2D" parent="PanelContainer"]
+[node name="Camera2D" type="Camera2D" parent="GameContainer"]
 anchor_mode = 0
 script = ExtResource("2_chv1w")
 
-[node name="TestLevel2" parent="PanelContainer" instance=ExtResource("1_px6px")]
-position = Vector2(512, 0)
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 91.0
+offset_bottom = 56.0
+columns = 2
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "jlkjklsajklasjlk"
+layout_mode = 1
+offset_right = 47.0
+offset_bottom = 26.0
+text = "aaaaa"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 26.0
+grow_horizontal = 0
+text = "bbbb"
+horizontal_alignment = 1

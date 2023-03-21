@@ -11,14 +11,12 @@ config_version=5
 [application]
 
 config/name="Mida"
-run/main_scene="res://scenes/Test.tscn"
+run/main_scene="res://scenes/Mida.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=512
-window/size/viewport_height=320
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
