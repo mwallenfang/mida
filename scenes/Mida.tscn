@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bj7hv4565r7l0"]
+[gd_scene load_steps=8 format=3 uid="uid://bj7hv4565r7l0"]
 
 [ext_resource type="Script" path="res://scenes/Mida.gd" id="1_eetb2"]
 [ext_resource type="Script" path="res://scenes/Camera2D.gd" id="2_chv1w"]
 [ext_resource type="Script" path="res://scenes/Label2.gd" id="3_wlmtl"]
 [ext_resource type="Script" path="res://scenes/LevelLabel.gd" id="4_dqud4"]
+[ext_resource type="Shader" path="res://shaders/Post.gdshader" id="5_3ept8"]
+[ext_resource type="AudioStream" uid="uid://b74lkakjbt6fd" path="res://assets/audio/main_menu.wav" id="6_wpslp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d44js"]
+shader = ExtResource("5_3ept8")
 
 [node name="Mida" type="Node2D"]
 script = ExtResource("1_eetb2")
@@ -11,10 +16,13 @@ script = ExtResource("1_eetb2")
 [node name="Game" type="Node2D" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="Game"]
+texture_filter = 2
 position = Vector2(576, 324)
+position_smoothing_enabled = true
 script = ExtResource("2_chv1w")
 
 [node name="HUD" type="CanvasLayer" parent="."]
+layer = 2
 
 [node name="SpeedrunTimer" type="Label" parent="HUD"]
 offset_right = 100.0
@@ -35,3 +43,18 @@ text = "Level X"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_dqud4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_d44js")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_wpslp")
+autoplay = true
