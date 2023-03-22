@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bj7hv4565r7l0"]
+[gd_scene load_steps=5 format=3 uid="uid://bj7hv4565r7l0"]
 
 [ext_resource type="Script" path="res://scenes/Mida.gd" id="1_eetb2"]
 [ext_resource type="Script" path="res://scenes/Camera2D.gd" id="2_chv1w"]
+[ext_resource type="Script" path="res://scenes/Label2.gd" id="3_wlmtl"]
+[ext_resource type="Script" path="res://scenes/LevelLabel.gd" id="4_dqud4"]
 
 [node name="Mida" type="Node2D"]
 script = ExtResource("1_eetb2")
@@ -14,19 +16,22 @@ script = ExtResource("2_chv1w")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="Label2" type="Label" parent="HUD"]
+[node name="SpeedrunTimer" type="Label" parent="HUD"]
+offset_right = 100.0
+offset_bottom = 50.0
+text = "42:42:42"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_wlmtl")
+
+[node name="LevelLabel" type="Label" parent="HUD"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -1192.0
-offset_right = -1152.0
-offset_bottom = 26.0
+offset_left = -100.0
+offset_bottom = 50.0
 grow_horizontal = 0
-text = "bbbb"
+text = "Level X"
 horizontal_alignment = 1
-
-[node name="Label" type="Label" parent="HUD"]
-offset_right = 47.0
-offset_bottom = 26.0
-text = "aaaaa"
-horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_dqud4")

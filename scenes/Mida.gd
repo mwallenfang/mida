@@ -3,6 +3,7 @@ extends Node2D
 const LEVEL_AMOUNT = 1
 const START_LEVEL = 1
 var levels = []
+var current_level = 1
 
 
 # Called when the node enters the scene tree for the first time.
