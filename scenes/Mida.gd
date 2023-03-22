@@ -1,8 +1,9 @@
-extends Control
+extends Node2D
 
 const LEVEL_AMOUNT = 1
 const START_LEVEL = 1
 var levels = []
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,4 +12,4 @@ func _ready():
 		var level = load("res://scenes/levels/Level"+str(i)+".tscn")
 		levels.append(level)
 	
-	$GameContainer.add_child(levels[START_LEVEL-1].instantiate())
+	$Game.add_child(levels[START_LEVEL-1].instantiate())

@@ -3,48 +3,30 @@
 [ext_resource type="Script" path="res://scenes/Mida.gd" id="1_eetb2"]
 [ext_resource type="Script" path="res://scenes/Camera2D.gd" id="2_chv1w"]
 
-[node name="Mida" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 3
+[node name="Mida" type="Node2D"]
 script = ExtResource("1_eetb2")
 
-[node name="GameContainer" type="PanelContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Game" type="Node2D" parent="."]
 
-[node name="Camera2D" type="Camera2D" parent="GameContainer"]
-anchor_mode = 0
+[node name="Camera2D" type="Camera2D" parent="Game"]
+position = Vector2(576, 324)
 script = ExtResource("2_chv1w")
 
-[node name="GridContainer" type="GridContainer" parent="."]
-layout_mode = 0
-offset_right = 91.0
-offset_bottom = 56.0
-columns = 2
+[node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-offset_right = 47.0
-offset_bottom = 26.0
-text = "aaaaa"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="."]
-layout_mode = 1
+[node name="Label2" type="Label" parent="HUD"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
+offset_left = -1192.0
+offset_right = -1152.0
 offset_bottom = 26.0
 grow_horizontal = 0
 text = "bbbb"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="HUD"]
+offset_right = 47.0
+offset_bottom = 26.0
+text = "aaaaa"
 horizontal_alignment = 1
